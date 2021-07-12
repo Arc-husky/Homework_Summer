@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Lab1</string>
+    <string name="btn_change">点击查看下一条</string>
+    <string name="txt">蚌埠住啦</string>
+</resources>
