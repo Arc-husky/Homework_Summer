@@ -1,0 +1,56 @@
+Index: ../Lab1/app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".MainActivity\">\r\n\r\n    <Button\r\n        android:id=\"@+id/button_change\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginBottom=\"48dp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.498\"\r\n        app:layout_constraintLeft_toLeftOf=\"parent\"\r\n        app:layout_constraintRight_toRightOf=\"parent\"\r\n        android:text=\"@string/btn_change\"\r\n        />\r\n\r\n    <ImageView\r\n        android:id=\"@+id/imageView\"\r\n        android:layout_width=\"113dp\"\r\n        android:layout_height=\"94dp\"\r\n        android:layout_marginTop=\"104dp\"\r\n        android:contentDescription=\"picture\"\r\n        app:layout_constraintLeft_toLeftOf=\"parent\"\r\n        app:layout_constraintRight_toRightOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:srcCompat=\"@mipmap/r1\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView2\"\r\n        android:layout_width=\"104dp\"\r\n        android:layout_height=\"62dp\"\r\n        android:layout_marginTop=\"220dp\"\r\n        android:gravity=\"center_horizontal\"\r\n        android:text=\"@string/txt\"\r\n        android:textSize=\"18sp\"\r\n        app:layout_constraintHorizontal_bias=\"0.498\"\r\n        app:layout_constraintLeft_toLeftOf=\"parent\"\r\n        app:layout_constraintRight_toRightOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <Switch\r\n        android:id=\"@+id/switch1\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"564dp\"\r\n        android:text=\"Switch\"\r\n        app:layout_constraintHorizontal_bias=\"0.498\"\r\n        app:layout_constraintLeft_toLeftOf=\"parent\"\r\n        app:layout_constraintRight_toRightOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <SeekBar\r\n        android:id=\"@+id/seekBar\"\r\n        android:layout_width=\"205dp\"\r\n        android:layout_height=\"188dp\"\r\n        android:layout_marginTop=\"296dp\"\r\n        app:layout_constraintHorizontal_bias=\"0.502\"\r\n        app:layout_constraintLeft_toLeftOf=\"parent\"\r\n        app:layout_constraintRight_toRightOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../Lab1/app/src/main/res/layout/activity_main.xml	(revision b9c188655f003e0c77d03a2890ee969f07630659)
++++ ../Lab1/app/src/main/res/layout/activity_main.xml	(date 1626143834596)
+@@ -47,7 +47,7 @@
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="564dp"
+-        android:text="Switch"
++        android:text="切换图片"
+         app:layout_constraintHorizontal_bias="0.498"
+         app:layout_constraintLeft_toLeftOf="parent"
+         app:layout_constraintRight_toRightOf="parent"
+Index: ../README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Homework_Summer\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../README.md	(revision b9c188655f003e0c77d03a2890ee969f07630659)
++++ ../README.md	(date 1626181213581)
+@@ -1,1 +1,12 @@
+ # Homework_Summer
++
++Lab2测试直接运行app，有四个按钮
++
++ToDial切换到拨号盘
++
++ToBaidu打开百度
++
++ToNextActivity切换到下一个活动，内部可以再点击切换到设计的UI
++
++ToRecyclerView切换到热搜表
++
+Index: ../Lab1/.idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"testRunner\" value=\"PLATFORM\" />\r\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n            <option value=\"$PROJECT_DIR$/app\" />\r\n          </set>\r\n        </option>\r\n        <option name=\"resolveModulePerSourceSet\" value=\"false\" />\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../Lab1/.idea/gradle.xml	(revision b9c188655f003e0c77d03a2890ee969f07630659)
++++ ../Lab1/.idea/gradle.xml	(date 1626141767102)
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
