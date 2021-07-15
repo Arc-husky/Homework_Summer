@@ -22,6 +22,7 @@ import java.util.List;
 
 public class ClockView extends View {
 
+    private boolean isRunning=false; //进程是否在运行
     private static final int FULL_CIRCLE_DEGREE = 360;
     private static final int UNIT_DEGREE = 6;
 
@@ -127,14 +128,17 @@ public class ClockView extends View {
         drawTimeNumbers(canvas);
         drawClockCircle(canvas);
         // TODO 实现时间的转动，每一秒刷新一次
-        Runnable TimeUpdate = new Runnable() {
-            @Override
-            public void run() {
-                postInvalidate();
-                handler.postDelayed(this,1000);
-            }
-        };
-        handler.postDelayed(TimeUpdate,1000);
+        if(!isRunning) {
+            isRunning = true;
+            Runnable TimeUpdate = new Runnable() {
+                @Override
+                public void run() {
+                    postInvalidate();
+                    handler.postDelayed(this, 1000);
+                }
+            };
+            handler.postDelayed(TimeUpdate, 1000);
+        }
     }
 
     // 绘制表盘上的刻度
