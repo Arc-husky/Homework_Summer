@@ -16,8 +16,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bytedance.practice5.model.UploadResponse;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import okhttp3.MediaType;
@@ -168,7 +177,110 @@ public class UploadActivity extends AppCompatActivity {
 
     // TODO 7 选做 用URLConnection的方式实现提交
     private void submitMessageWithURLConnection(){
+        byte[] coverImageData = readDataFromUri(coverImageUri);
+        if (coverImageData == null || coverImageData.length == 0) {
+            Toast.makeText(this, "封面不存在", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        String to = toEditText.getText().toString();
+        if (TextUtils.isEmpty(to)) {
+            Toast.makeText(this, "请输入TA的名字", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        String content = contentEditText.getText().toString();
+        if (TextUtils.isEmpty(content)) {
+            Toast.makeText(this, "请输入想要对TA说的话", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
+        if ( coverImageData.length >= MAX_FILE_SIZE) {
+            Toast.makeText(this, "文件过大", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    String urlStr = String.format(Constants.BASE_URL+"messages?student_id=%s&extra_value=%s"
+                            ,Constants.STUDENT_ID,"\"\"");
+                    URL url = new URL(urlStr);
+                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                    conn.setConnectTimeout(6000);
+                    conn.setRequestMethod("POST");
+                    conn.setDoOutput(true);
+                    conn.setDoInput(true);
+                    conn.setUseCaches(false);
+                    conn.setRequestProperty("token",Constants.token);
+                    conn.setRequestProperty("connection", "Keep-Alive");
+                    conn.setRequestProperty("Charsert", "UTF-8");
+                    final String Boundary = "====WebKitFormBoundary";
+                    conn.setRequestProperty("Content-Type","multipart/form-data; boundary="+Boundary);
+                    final String SEP = "--"+Boundary+"\r\n";
+                    StringBuilder builder = new StringBuilder();
+
+//                    builder.append("\r\n");
+
+                    builder.append(SEP);
+                    builder.append("Content-Disposition: form-data; name=\"from\"\r\n\r\n");
+                    builder.append(Constants.USER_NAME);
+                    builder.append("\r\n");
+
+                    builder.append(SEP);
+                    builder.append("Content-Disposition: form-data; name=\"to\"\r\n\r\n");
+                    builder.append(to);
+                    builder.append("\r\n");
+
+                    builder.append(SEP);
+                    builder.append("Content-Disposition: form-data; name=\"content\"\r\n\r\n");
+                    builder.append(content);
+                    builder.append("\r\n");
+
+                    builder.append(SEP);
+                    builder.append("Content-Disposition: form-data; name=\"image\"; " +
+                            "filename=\"picture.jpg\"\r\n");
+                    builder.append("Content-Type: image/jpeg\r\n\r\n");
+
+                    String result =builder.toString();
+                    DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+                    os.write(builder.toString().getBytes());
+                    os.write(coverImageData);
+                    os.write(("\r\n--"+Boundary+"--\r\n").getBytes());
+                    os.flush();
+
+                    if(conn.getResponseCode() == 200) {
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8));
+                        UploadResponse response = new Gson().fromJson(reader, new TypeToken<UploadResponse>() {
+                        }.getType());
+                        if(response.success) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(UploadActivity.this, "上传成功！", Toast.LENGTH_SHORT).show();
+                                    Intent i = new Intent(UploadActivity.this, MainActivity.class);
+                                    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(i);
+                                }
+                            });
+                        }else {
+                            Toast.makeText(UploadActivity.this,"上传失败:"+response.error,Toast.LENGTH_SHORT).show();
+                        }
+                    }else {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(UploadActivity.this,"上传失败！",Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                    conn.disconnect();
+                    os.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Toast.makeText(UploadActivity.this,"上传失败！",Toast.LENGTH_SHORT).show();
+                }
+            }
+        }).start();
     }
 
 
