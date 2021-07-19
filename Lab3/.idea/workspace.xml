@@ -31,80 +31,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8fead63e-f667-4610-a885-99eda480b59a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Lab2/.idea/shelf/Default_Changelist.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab2/.idea/shelf/Default_Changelist/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/java/com/example/chapter3/homework/Ch3Ex1Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/java/com/example/chapter3/homework/Ch3Ex2Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/java/com/example/chapter3/homework/Ch3Ex3Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/java/com/example/chapter3/homework/ItemFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/java/com/example/chapter3/homework/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/java/com/example/chapter3/homework/MyItemRecyclerViewAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/java/com/example/chapter3/homework/PlaceholderFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/java/com/example/chapter3/homework/RainbowTextView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/java/com/example/chapter3/homework/animatorFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/java/com/example/chapter3/homework/placeholder/PlaceholderContent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/anim/alpha.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/anim/continue_anim.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/anim/fade_in.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/anim/fade_out.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/anim/rotate.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/anim/scale.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/anim/slide_down.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/anim/slide_left.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/anim/slide_right.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/anim/slide_up.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/anim/translate.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/animator/animator_set.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/animator/breath.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/animator/rotate.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/animator/translate_alpha_animator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/layout/activity_ch3ex1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/layout/activity_ch3ex2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/layout/activity_ch3ex3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/layout/animation_waiting.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/layout/fragment_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/layout/fragment_item_list.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/layout/fragment_placeholder.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/mipmap-xhdpi/head.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/raw/material_wave_loading.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/raw/muzli.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/transition/fade_out.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/values/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/screenshot/ex1.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/screenshot/ex2.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/screenshot/ex3.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../s1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab1/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab1/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s1.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,10 +195,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="422" y="24" key="AndroidCreateResourceFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1626254043412" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1626276626813">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1626599773082">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1626276626813" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1626599773082" />
     <state width="1493" height="174" key="GridCell.Tab.0.bottom" timestamp="1626264884303">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
