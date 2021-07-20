@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Tik_Tok\\android-campus-2021\\chapter-6\\Demo\\todolist\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hu\\values-hu.xml",
+            "outputFile": "D:\\Tik_Tok\\homework\\Lab6\\todolist\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hu\\values-hu.xml",
             "map": [
                 {
                     "source": "D:\\Android\\caches\\transforms-2\\files-2.1\\65f69ad4826fa6c7e13e6b247f89d912\\res\\values-hu\\values-hu.xml",
