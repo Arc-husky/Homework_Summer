@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.app.StatusBarManager;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -284,5 +285,35 @@ public class VideoActivity extends AppCompatActivity implements View.OnClickList
             ISCHANGING=false;
         }
 
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            ISFULLSCREEN = true;
+            if (Build.VERSION.SDK_INT < 16) {
+                getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                        WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            }else {
+                View decorView = getWindow().getDecorView();
+                // Hide the status bar.
+                int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+                decorView.setSystemUiVisibility(uiOptions);
+            }
+            if(actionBar!=null) actionBar.hide();
+            btnMaxSize.setImageResource(R.mipmap.delete);
+            RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
+                    RelativeLayout.LayoutParams.MATCH_PARENT);
+            rl_group.setLayoutParams(lp);
+        } else if(newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+            ISFULLSCREEN = false;
+            if(actionBar!=null) actionBar.show();
+            btnMaxSize.setImageResource(R.mipmap.fullscreen);
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+            RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
+                    dp2px(VideoActivity.this, 300));
+            rl_group.setLayoutParams(lp);
+        }
     }
 }
