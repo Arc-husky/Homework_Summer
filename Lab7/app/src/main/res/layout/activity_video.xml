@@ -10,7 +10,7 @@
     <RelativeLayout
         android:id="@+id/rl_group"
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="250dp">
 
         <SurfaceView
             android:id="@+id/vv_detail"
@@ -25,6 +25,7 @@
             />
 
         <LinearLayout
+            android:id="@+id/MediaUI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

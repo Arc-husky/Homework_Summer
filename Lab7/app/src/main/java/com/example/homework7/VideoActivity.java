@@ -58,8 +58,7 @@ public class VideoActivity extends AppCompatActivity implements View.OnClickList
         public void handleMessage(android.os.Message msg) {
             switch (msg.what) {
                 case 100:
-                    btnPlayVideo.setVisibility(View.GONE);
-                    btnMaxSize.setVisibility(View.GONE);
+                    findViewById(R.id.MediaUI).setVisibility(View.GONE);
                     break;
                 case 200:
                     try {
@@ -119,8 +118,7 @@ public class VideoActivity extends AppCompatActivity implements View.OnClickList
     public boolean onTouchEvent(android.view.MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                btnMaxSize.setVisibility(View.VISIBLE);
-                btnPlayVideo.setVisibility(View.VISIBLE);
+                findViewById(R.id.MediaUI).setVisibility(View.VISIBLE);
                 mHandler.sendEmptyMessageDelayed(100, 3000);
                 break;
 
@@ -172,6 +170,7 @@ public class VideoActivity extends AppCompatActivity implements View.OnClickList
             // 视频地址
             mMediaPlayer.setDisplay(mSurfaceHolder); // holder
             mMediaPlayer.setOnPreparedListener(new PreparedListener()); //
+            mMediaPlayer.setLooping(true);
             mMediaPlayer.prepare();
             long mills = mMediaPlayer.getDuration();
             SimpleDateFormat formatter;
@@ -181,7 +180,6 @@ public class VideoActivity extends AppCompatActivity implements View.OnClickList
             String str = formatter.format(mills);
             total.setText(str);
             mSeekBar.setMax(mMediaPlayer.getDuration());
-            PauseImage.setVisibility(View.GONE);
             mTimer = new Timer();
             mTimerTask = new TimerTask() {
                 @Override
@@ -211,8 +209,8 @@ public class VideoActivity extends AppCompatActivity implements View.OnClickList
             } else {
                 return;
             }
-
         }
+
     }
 
     @Override
@@ -238,7 +236,7 @@ public class VideoActivity extends AppCompatActivity implements View.OnClickList
                     getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
                     setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                     RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
-                            dp2px(VideoActivity.this, 300));
+                            dp2px(VideoActivity.this, 250));
                     rl_group.setLayoutParams(lp);
                 }else { // 非全屏切换全屏
                     ISFULLSCREEN = true;
@@ -312,7 +310,7 @@ public class VideoActivity extends AppCompatActivity implements View.OnClickList
             btnMaxSize.setImageResource(R.mipmap.fullscreen);
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
             RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
-                    dp2px(VideoActivity.this, 300));
+                    dp2px(VideoActivity.this, 250));
             rl_group.setLayoutParams(lp);
         }
     }
