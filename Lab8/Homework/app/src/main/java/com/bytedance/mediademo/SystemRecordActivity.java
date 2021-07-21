@@ -67,10 +67,10 @@ public class SystemRecordActivity extends AppCompatActivity {
         // todo 2.1 唤起视频录制 intent 并设置视频地址
         Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
         mp4Path = getOutputMediaPath();
-        intent.putExtra(MediaStore.EXTRA_OUTPUT,PathUtils.getUriForFile(this,mp4Path));
-        intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY,1);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, PathUtils.getUriForFile(this, mp4Path));
+        intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1);
         if(intent.resolveActivity(getPackageManager())!=null) {
-            startActivityForResult(intent,REQUEST_CODE_RECORD);
+            startActivityForResult(intent, REQUEST_CODE_RECORD);
         }
     }
 
@@ -105,13 +105,9 @@ public class SystemRecordActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         // todo 2.1 视频获取成功，播放视频
-        if(requestCode == REQUEST_CODE_RECORD && requestCode == RESULT_OK) {
-            play();
+        if(requestCode == REQUEST_CODE_RECORD && resultCode==RESULT_OK){
+            mVideoView.setVideoPath(mp4Path);
+            mVideoView.start();
         }
-    }
-
-    private void play() {
-        mVideoView.setVideoPath(mp4Path);
-        mVideoView.start();
     }
 }
